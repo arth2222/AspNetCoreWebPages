@@ -1,0 +1,32 @@
+﻿@page
+@using System.Data
+@model AspNetCoreTest.Pages.TestModel
+
+
+
+@*<form method="post" asp-page-handler="OnPostDoStuffCodeBehind">
+    <button>Click</button>
+</form>*@
+
+<form method="post">
+    <button>Click</button>
+</form>
+
+
+<table>
+@{
+    foreach (DataRow row in TestModel.GetData().Rows)
+    {
+        <tr>
+            <td>@row[0]</td>
+            <td>@row[1]</td>
+            <td>@row[2]</td>
+            <td align="right">@row[3]</td>
+            <td>@row[4]</td>
+            <td>@row[5]</td>
+        </tr>
+    }
+
+    
+}
+</table>
